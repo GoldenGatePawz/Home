@@ -1,0 +1,654 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #FFF3CD;
+}
+
+h1, h2, h3 {
+    margin: 1;
+    font-weight: bold;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header Styles */
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Static Navbar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #F8B400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional for better visibility */
+}
+
+/* Add padding to body to prevent content from being hidden behind the navbar */
+body {
+    padding-top: 60px; /* Adjust to the height of your navbar */
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #003F63;
+}
+
+/* Hamburger Button Styling */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 40px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #003F63; /* Color of hamburger lines */
+}
+
+/* Menu Styling */
+/* Navigation Menu */
+.menu {
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column; /* Stack submenu items vertically */
+    position: absolute;
+    top: 60px; /* Position below the header */
+    right: 20px;
+    background-color: #003F63; /* Dark blue background */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu.active {
+    display: flex; /* Show the menu when active */
+}
+
+.menu ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px; /* Space between menu items */
+}
+
+.menu ul li:last-child {
+    margin-bottom: 0; /* Remove margin for the last item */
+}
+
+.menu ul a {
+    display: block; /* Make the entire area clickable */
+    padding: 10px 15px; /* Add space inside links */
+    color: #FCE4A5; /* Light yellow text color */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px; /* Optional: Rounded corners for links */
+}
+
+.menu ul a:hover {
+    background-color: #FFF3CD; /* Lighter yellow background on hover */
+    color: #001F3F; /* Darker blue text on hover */
+}
+/* Desktop View: Always Show Menu */
+/* Desktop View: Show Menu */
+@media (min-width: 1090px) {
+    .menu {
+        display: flex; /* Always visible on larger screens */
+        flex-direction: row;
+        position: static;
+        box-shadow: none;
+        background-color: transparent; /* No background for desktop */
+    }
+
+    .menu ul a {
+        color: #003F63; /* Dark blue text */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger button on larger screens */
+    }
+}
+/* Adjust Sign-In Alignment */
+.menu ul:last-child {
+    margin-right: 0;
+    padding-right: 0px;
+    padding-left:10px; /* Adjust padding to bring it leftward */
+}
+
+/* Hero Section */
+.hero {
+    height: calc(100vh - 60px); /* Adjust for header height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #F8B400;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .button {
+    padding: 10px 20px;
+    background-color: #003F63;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+/* Section Divider */
+section {
+    padding: 80px 20px; /* Added extra padding to account for the fixed header */
+}
+
+
+
+/* Section Colors */
+#about {
+    background-color: #FCE4A5; /* Light Yellow */
+    text-align: center;
+}
+
+#schedule {
+    background-color: #FFF3CD; /* Lighter Yellow */
+}
+
+#articles {
+    background-color: #FFF9E3; /* Light Cream */
+}
+
+#contact {
+    background-color: #FCE4A5; /* Light Yellow */
+}
+
+/* About Section */
+#about img {
+    border-radius: 100%;
+    width: 400px;
+    height: 300px;
+    margin: 100px auto;
+    display: block;
+}
+
+#about p {
+    font-size: 1.2rem; /* Adjust font size */
+    line-height: 1.6; /* Improve readability */
+    text-align: justify; /* Justify the text for a professional look */
+    margin: 20px 0; /* Add vertical spacing */
+}
+
+/* Schedule Section */
+#schedule form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#schedule form label {
+    font-weight: bold;
+}
+
+#schedule form input,
+#schedule form select,
+#schedule form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#schedule form button {
+    background-color: #003F63;
+    color: #FAFAFA;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#schedule form button:hover {
+    background-color: #F58634;
+}
+
+/* Articles Section */
+
+.articles-list {
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.articles-list img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.articles-list article {
+    background-color: #FFF;
+    padding: 20px;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+    flex: 1 1 30%;
+    max-width: 30%;
+    text-align: left;
+    
+}
+
+.articles-list article h3 {
+    color: #003F63;
+}
+
+.articles-list article .button {
+    background-color: #F8B400;
+    color: #FFF;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.articles-list article .button:hover {
+    background-color: #F58634;
+}
+
+/* Responsive Design for Smaller Screens */
+/* Responsive Design for Articles Section */
+@media (max-width: 768px) {
+    .articles-list {
+        flex-direction: column;
+        align-items: center; /* Center-align articles */
+        gap: 20px;
+    }
+
+    .articles-list article {
+        flex: none; /* Prevent flex-grow */
+        width: 90%; /* Adjust width to look proportionate on smaller screens */
+        max-width: 600px; /* Prevent articles from becoming too wide */
+        margin: 0 auto; /* Center each article horizontally */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #003F63;
+    color: #FAFAFA;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    #about img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .articles-list article {
+        flex: 1 1 100%;
+    }
+}
+
+/* Sign-In Section */
+#signin {
+	background-color: #FCE4A5;
+}
+section {
+    padding: 100px 20px;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 50px 15px;
+    }
+}
+section#signin {
+    margin: 80px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+section#signin h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #F58634;
+}
+
+section#signin form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+section#signin form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+section#signin form button {
+    padding: 10px 20px;
+    background-color: #F8B400;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+section#signin form button:hover {
+    background-color: #F58634;
+}
+
+/* General Styling for Forms */
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #003F63;
+}
+
+form input, form select, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #F8B400;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #F58634;
+}
+
+/* Fieldsets */
+fieldset {
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #FFF3CD; /* Light background to separate sections */
+}
+
+fieldset legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #F58634;
+    padding: 0 10px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #FCE4A5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: #F58634;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #003F63;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact form input,
+#contact form textarea,
+#contact form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+#contact form button {
+    background-color: #003F63;
+    color: #FAFAFA;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+    background-color: #F58634;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add these Responsive Design Enhancements at the end of styles.css */
+
+
+
+/* Hero Section Improvements */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Articles Section */
+@media (max-width: 992px) {
+    .articles-list {
+        flex-direction: column;
+        align-items: center; /* Center-align articles */
+        gap: 20px;
+    }
+
+    .articles-list article {
+        width: 100%; /* Full width for smaller screens */
+        max-width: 600px;
+    }
+}
+
+/* Form Responsiveness */
+@media (max-width: 768px) {
+    form {
+        width: 90%; /* Adjust form width on smaller screens */
+        margin: 0 auto; /* Center forms */
+    }
+
+    form input, form select, form textarea, form button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Articles Section Overflow Fix */
+.articles-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 20px; /* Add space between articles */
+    justify-content: center; /* Center the articles */
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+.articles-list article {
+    box-sizing: border-box; /* Include padding and border in width */
+    flex: 1 1 calc(33.33% - 20px); /* Ensure three articles per row with spacing */
+    max-width: 300px; /* Set a maximum width for better control */
+    padding: 20px;
+}
+
+@media (max-width: 992px) {
+    .articles-list article {
+        flex: 1 1 45%; /* Two articles per row for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .articles-list article {
+        flex: 1 1 100%; /* Single article per row for small screens */
+        max-width: 100%; /* Adjust width to fill the screen */
+    }
+}
+
+/* Form Overflow Fix */
+form input, form select, form textarea {
+    width: 100%; /* Ensure inputs take full width of container */
+    max-width: 100%; /* Prevent overflowing parent container */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+form {
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/* Articles Section with Equal Sizes */
+.articles-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 20px; /* Space between articles */
+    justify-content: center; /* Center the articles */
+    align-items: stretch; /* Ensure all articles have equal height */
+}
+
+.articles-list article {
+    flex: 1 1 calc(33.33% - 20px); /* Three articles per row with equal width */
+    max-width: calc(33.33% - 20px); /* Match width calculation */
+    min-height: 300px; /* Ensure consistent height */
+    box-sizing: border-box; /* Include padding and border in size */
+    padding: 20px;
+    background-color: #FFF; /* Default background color */
+    border: 1px solid #DDD;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Allow vertical stacking inside articles */
+    justify-content: space-between; /* Distribute content evenly */
+}
+
+/* Medium Screens: Two articles per row */
+@media (max-width: 992px) {
+    .articles-list article {
+        flex: 1 1 calc(50% - 20px); /* Two articles per row */
+        max-width: calc(50% - 20px); /* Match width calculation */
+    }
+}
+
+/* Small Screens: Single article per row */
+@media (max-width: 768px) {
+    .articles-list article {
+        flex: 1 1 100%; /* Single article per row */
+        max-width: 100%;
+    }
+}

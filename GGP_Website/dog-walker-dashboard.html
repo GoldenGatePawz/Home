@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Walker Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="server/server.js"></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF3CD; /* Light yellow background */
+        }
+
+        header {
+            background-color: #F8B400;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            color: #003F63;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #003F63;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dashboard Section */
+        #dashboard {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        #dashboard h2 {
+            color: #F58634;
+            text-align: center;
+        }
+
+        #dashboard .overview,
+        #dashboard .tasks,
+        #dashboard .payment-summary {
+            background-color: #FAFAFA;
+            border: 1px solid #DDD;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #dashboard h3 {
+            color: #003F63;
+            margin-bottom: 10px;
+        }
+
+        #dashboard p {
+            margin: 5px 0;
+        }
+
+        #dashboard ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #dashboard ul li {
+            background-color: #FFF;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #CCC;
+        }
+
+        #dashboard ul li strong {
+            color: #F58634;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003F63;
+            color: #FAFAFA;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #dashboard {
+                padding: 10px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Golden Gate Pawz</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="dashboard">
+        <h2>Welcome, [Walker Name]!</h2>
+        <p>Here is an overview of your tasks and earnings.</p>
+
+        <!-- Task Overview -->
+        <div class="overview">
+            <h3>Task Overview</h3>
+            <p><strong>Upcoming Walks:</strong> 5</p>
+            <p><strong>Upcoming Boardings:</strong> 2</p>
+            <p><strong>Total Dogs Today:</strong> 7</p>
+        </div>
+
+        <!-- Daily Tasks -->
+        <div class="tasks">
+            <h3>Daily Tasks</h3>
+            <ul>
+                <li>Walk with <strong>Buddy</strong> at <strong>10:00 AM</strong></li>
+                <li>Boarding with <strong>Max</strong> starts at <strong>6:00 PM</strong></li>
+                <li>Walk with <strong>Charlie</strong> at <strong>3:00 PM</strong></li>
+            </ul>
+        </div>
+
+        <!-- Payment Summary -->
+        <div class="payment-summary">
+            <h3>Payment Summary</h3>
+            <p><strong>Total Earnings This Week:</strong> $450</p>
+            <p><strong>Total Pending Payments:</strong> $120</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Golden Gate Pawz. All rights reserved.</p>
+    </footer>
+</body>
+</html>

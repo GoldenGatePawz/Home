@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+	
+	
+</head>
+<body>
+	<script type="text/javascript" src="server/server.js"></script>
+    <header>
+        <div class="logo">Golden Gate Pawz</div>
+        <nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <li class="menu" id="menu">
+                <ul><a href="index.html">Home</a></ul>
+                <ul><a href="Index.html#about">About</a></ul>
+                <ul><a href="Index.html#schedule">Schedule</a></ul>
+                <ul><a href="Index.html#articles">Articles</a></ul>
+                <ul><a href="signin.html">Sign In</a></ul>
+            </li>
+        </nav>
+    </header>
+
+    <section id="signin">
+		<img class="logoimg" src="img/GGP_logo.PNG" width="150" height="170" alt="Golden Gate Pawz"/>
+        <h2>Sign In</h2>
+        <form id="loginForm" action="/api/login" method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+        <p>Don’t have an account? <a href="Index.html">Schedule a Meet and Greet</a> to get started!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Golden Gate Pawz. All rights reserved.</p>
+    </footer>
+</body>
+</html>

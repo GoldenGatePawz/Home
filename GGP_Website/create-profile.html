@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Golden Gate Pawz</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="create-profile">
+        <h2>Create Your Profile</h2>
+        <form id="profileForm" action="/api/create-profile" method="post">
+            <!-- Role Selection -->
+            <label for="role">Are you a:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="client">Client</option>
+                <option value="walker">Dog Walker</option>
+            </select>
+
+            <!-- User Details -->
+            <fieldset>
+                <legend>Your Details</legend>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </fieldset>
+
+            <!-- Pet Details (For Clients) -->
+            <fieldset id="petDetails" style="display: none;">
+                <legend>Your Pet's Details</legend>
+                <label for="petName">Pet's Name</label>
+                <input type="text" id="petName" name="petName">
+
+                <label for="breed">Breed</label>
+                <input type="text" id="breed" name="breed">
+
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age">
+
+                <label for="specialNeeds">Special Needs</label>
+                <textarea id="specialNeeds" name="specialNeeds" rows="4"></textarea>
+
+                <label for="photo">Upload Pet Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="submit" class="button">Create Profile</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Golden Gate Pawz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const roleSelect = document.getElementById('role');
+        const petDetails = document.getElementById('petDetails');
+
+        // Show/Hide Pet Details based on Role Selection
+        roleSelect.addEventListener('change', () => {
+            if (roleSelect.value === 'client') {
+                petDetails.style.display = 'block';
+            } else {
+                petDetails.style.display = 'none';
+            }
+        });
+
+        document.getElementById("profileForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Profile creation functionality is under development.");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <script src="scripts.js" defer></script> <!-- Link to external JS -->
+</head>
+<body>
+    <header>
+        <div class="logo">Golden Gate Pawz</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="dashboard">
+        <h2>Welcome, [Client Name]!</h2>
+        <p>Here is an overview of your account and upcoming appointments.</p>
+
+        <!-- Account Overview -->
+        <div class="overview">
+            <h3>Account Summary</h3>
+            <p><strong>Outstanding Balance:</strong> $120</p>
+            <p><strong>Total Walks Scheduled:</strong> 5</p>
+            <p><strong>Total Boardings Scheduled:</strong> 2</p>
+        </div>
+
+        <!-- Upcoming Appointments -->
+        <div class="appointments">
+            <h3>Upcoming Appointments</h3>
+            <ul>
+                <li>Walk on <strong>January 5th, 2025</strong> at <strong>10:00 AM</strong></li>
+                <li>Boarding from <strong>January 6th, 2025</strong> to <strong>January 10th, 2025</strong></li>
+            </ul>
+        </div>
+
+        <!-- Schedule New Appointment -->
+        <div class="schedule-new">
+            <h3>Schedule New Service</h3>
+            <form id="scheduleForm" action="/api/schedule" method="post">
+                <label for="service">Service Type</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="walk">Dog Walk</option>
+                    <option value="boarding">Boarding</option>
+                </select>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time">
+
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+
+                <button type="submit" class="button">Schedule Service</button>
+            </form>
+        </div>
+
+        <!-- Payment History -->
+        <div class="payment-history">
+            <h3>Payment History</h3>
+            <ul>
+                <li>Paid $120 on <strong>December 20th, 2024</strong></li>
+                <li>Paid $150 on <strong>November 15th, 2024</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Golden Gate Pawz. All rights reserved.</p>
+    </footer>
+</body>
+</html>
